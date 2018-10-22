@@ -13,12 +13,12 @@
           <ul v-for="(project, index) in projects" :key="index">
             <li v-if="projectsToShow == project.category">
               <div class="project">
-                <h4>{{ project.name }}</h4>
+                <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
               </div>
             </li>
             <li v-else-if="projectsToShow == 'all'">
               <div class="project">
-                <h4>{{ project.name }}</h4>
+                <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
               </div>
             </li>
           </ul>
@@ -57,60 +57,20 @@ export default {
       ],
       projects: [
         {
-          name: 'project 1',
-          info: 'this is my project 1',
-          link: '',
-          github: '',
-          category: 'resp'
-        },
-        {
-          name: 'project 2',
-          info: 'this is my project 2',
-          link: '',
-          github: '',
+          name: 'Kat FMWorld UK',
+          info: 'My first commercial project',
+          link: 'https://eager-franklin-097a07.netlify.com',
+          github: 'https://github.com/mru24/FM_World_UK',
+          tags: ['HTML', 'VUE JS', 'SASS', 'Bootstrap'],
           category: 'js'
         },
         {
-          name: 'project 3',
-          info: 'this is my project 3',
-          link: '',
-          github: '',
-          category: 'resp'
-        },
-        {
-          name: 'project 4',
-          info: 'this is my project 4',
-          link: '',
-          github: '',
+          name: 'My Portfolio',
+          info: 'This Portfolio',
+          link: 'https://vigilant-shirley-59d618.netlify.com',
+          github: 'https://github.com/mru24/Yet-another-Portfolio',
+          tags: ['HTML', 'VUE JS', 'SASS', 'Firebase'],
           category: 'js'
-        },
-        {
-          name: 'project 5',
-          info: 'this is my project 5',
-          link: '',
-          github: '',
-          category: 'js'
-        },
-        {
-          name: 'project 6',
-          info: 'this is my project 6',
-          link: '',
-          github: '',
-          category: 'php'
-        },
-        {
-          name: 'project 7',
-          info: 'this is my project 7',
-          link: '',
-          github: '',
-          category: 'php'
-        },
-        {
-          name: 'project 8',
-          info: 'this is my project 8',
-          link: '',
-          github: '',
-          category: 'resp'
         }
       ]
     }
@@ -133,6 +93,7 @@ export default {
     width: 80%
     margin: 30px auto
     border-bottom: $borderLt
+    background: red
     ul
       display: flex
       flex-direction: row
