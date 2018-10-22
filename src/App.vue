@@ -43,6 +43,9 @@ body
       top: 0
       left: 20%
       width: 60%
+      @include bp-mobileSM
+        left: 4%
+        width: 92%
 
 .v-enter-active
   animation: fadeIn .2s

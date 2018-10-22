@@ -54,65 +54,65 @@ export default {
           info: '',
           data: 'php'
         }
+      ],
+      projects: [
+        {
+          name: 'project 1',
+          info: 'this is my project 1',
+          link: '',
+          github: '',
+          category: 'resp'
+        },
+        {
+          name: 'project 2',
+          info: 'this is my project 2',
+          link: '',
+          github: '',
+          category: 'js'
+        },
+        {
+          name: 'project 3',
+          info: 'this is my project 3',
+          link: '',
+          github: '',
+          category: 'resp'
+        },
+        {
+          name: 'project 4',
+          info: 'this is my project 4',
+          link: '',
+          github: '',
+          category: 'js'
+        },
+        {
+          name: 'project 5',
+          info: 'this is my project 5',
+          link: '',
+          github: '',
+          category: 'js'
+        },
+        {
+          name: 'project 6',
+          info: 'this is my project 6',
+          link: '',
+          github: '',
+          category: 'php'
+        },
+        {
+          name: 'project 7',
+          info: 'this is my project 7',
+          link: '',
+          github: '',
+          category: 'php'
+        },
+        {
+          name: 'project 8',
+          info: 'this is my project 8',
+          link: '',
+          github: '',
+          category: 'resp'
+        }
       ]
-      // projects: [
-      //   {
-      //     name: 'project 1',
-      //     info: 'this is my project 1',
-      //     link: '',
-      //     github: '',
-      //     category: 'resp'
-      //   },
-      //   {
-      //     name: 'project 2',
-      //     info: 'this is my project 2',
-      //     link: '',
-      //     github: '',
-      //     category: 'js'
-      //   },
-      //   {
-      //     name: 'project 3',
-      //     info: 'this is my project 3',
-      //     link: '',
-      //     github: '',
-      //     category: 'resp'
-      //   },
-      //   {
-      //     name: 'project 4',
-      //     info: 'this is my project 4',
-      //     link: '',
-      //     github: '',
-      //     category: 'js'
-      //   },
-      //   {
-      //     name: 'project 5',
-      //     info: 'this is my project 5',
-      //     link: '',
-      //     github: '',
-      //     category: 'js'
-      //   },
-      //   {
-      //     name: 'project 6',
-      //     info: 'this is my project 6',
-      //     link: '',
-      //     github: '',
-      //     category: 'php'
-      //   },
-      //   {
-      //     name: 'project 7',
-      //     info: 'this is my project 7',
-      //     link: '',
-      //     github: '',
-      //     category: 'php'
-      //   },
-      //   {
-      //     name: 'project 8',
-      //     info: 'this is my project 8',
-      //     link: '',
-      //     github: '',
-      //     category: 'resp'
-      //   }
-      // ]
     }
   },
   methods: {
@@ -127,6 +127,8 @@ export default {
 @import 'config'
 
 .container
+  height: auto
+  min-height: 100vh
   .workNav
     width: 80%
     margin: 30px auto
@@ -135,6 +137,8 @@ export default {
       display: flex
       flex-direction: row
       justify-content: space-around
+      @include bp-mobileSM
+        flex-direction: column
       li
         text-transform: capitalize
         cursor: pointer
@@ -155,5 +159,10 @@ export default {
             padding: 5px
             margin: 10px
             text-transform: uppercase
+            @include bp-mobile
+              width: 150px
+              height: 200px
+              margin: 5px
+
 
 </style>

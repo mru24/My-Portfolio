@@ -86,6 +86,8 @@ $formBgColor: #cccccc
     flex-direction: row
     align-items: center
     background: rgba(#fff, 0.1)
+    @include bp-mobile
+      flex-direction: column
     .imageContainer
       padding: 10px
       img
@@ -97,9 +99,12 @@ $formBgColor: #cccccc
       li
         margin-bottom: 10px
         font-size: 20px
+        @include bp-mobileSM
+          font-size: 16px
   form
     width: 100%
     margin: 30px auto
+    margin-bottom: 160px
     border: 2px solid $bgColor + 30
     border-radius: $radiusLg
     padding: 20px

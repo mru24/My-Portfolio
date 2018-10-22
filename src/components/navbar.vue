@@ -112,6 +112,10 @@ nav
   right: $pos
   width: $size
   height: $size
+  @include bp-mobileSM
+    width: $size - 20px
+    top: $pos - 40px
+    right: $pos - 20px
   .burger
     position: relative
     top: 0

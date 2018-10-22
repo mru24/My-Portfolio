@@ -1,4 +1,13 @@
+// FONTS
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,600')
+// MIXINS
+@mixin bp-mobile
+  @media only screen and (max-width: 991px)
+    @content
+
+@mixin bp-mobileSM
+  @media only screen and (max-width: 575px)
+    @content
 
 $bgColor: #040514
 
@@ -18,7 +27,8 @@ html, body
   width: 100%
   height: 100vh
   overflow: hidden
-
+  @include bp-mobile
+    overflow: auto
 body
   background-color: $bgColor
   font-family: 'Montserrat', sans-serif

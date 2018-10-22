@@ -45,20 +45,34 @@ export default {
     display: flex
     flex-direction: column
     justify-content: center
+    @include bp-mobileSM
+      display: block
+      height: auto
     .title
       font-size: 60px
       margin-bottom: 50px
+      @include bp-mobile
+        font-size: 40px
+      @include bp-mobileSM
+        margin-top: 50px
+        font-size: 26px
       span
         font-size: 30px
+        @include bp-mobile
+          font-size: 16px
     p
       color: $bgColor + 120
       font-size: 20px
       font-weight: 300
+      @include bp-mobileSM
+        font-size: 16px
     .arrow
       margin: 90px auto 0 auto
       width: 120px
       text-align: center
       cursor: pointer
+      @include bp-mobileSM
+        margin: 30px auto
   .skills
     width: 100%
     margin-top: 5%
