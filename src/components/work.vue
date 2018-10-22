@@ -139,6 +139,8 @@ export default {
       justify-content: space-around
       @include bp-mobileSM
         flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
       li
         text-transform: capitalize
         cursor: pointer
@@ -163,6 +165,4 @@ export default {
               width: 150px
               height: 200px
               margin: 5px
-
-
 </style>
