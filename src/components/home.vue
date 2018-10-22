@@ -3,8 +3,8 @@
     <div class="container">
       <div class="about">
         <h1 class="title">
-          Val Wroblewski
-          <br><span>Web Designer and Developer.</span>
+          Val Wroblewski<br>
+          <span>Web Designer and Developer.</span>
         </h1>
         <p>
           Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place.
@@ -54,12 +54,16 @@ export default {
       @include bp-mobile
         font-size: 40px
       @include bp-mobileSM
-        margin-top: 50px
+        margin-top: 20px
+        margin-bottom: 80px
         font-size: 26px
       span
+        display: block
         font-size: 30px
         @include bp-mobile
           font-size: 16px
+        @include bp-mobileSM
+          font-size: 14px
     p
       color: $bgColor + 120
       font-size: 20px

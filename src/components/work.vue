@@ -12,13 +12,31 @@
         <transition-group>
           <ul v-for="(project, index) in projects" :key="index">
             <li v-if="projectsToShow == project.category">
-              <div class="project">
+              <div class="project" @mouseenter="showTags" @mouseleave="hideTags">
                 <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
+                <div class="tags" v-if="project.showTags">
+                  <transition name="tagsIn">
+                    <ul v-if="project.showTags">
+                      <li v-for="(tag, index) in project.tags" :key="index">
+                        {{ tag }}
+                      </li>
+                    </ul>
+                  </transition>
+                </div>
               </div>
             </li>
             <li v-else-if="projectsToShow == 'all'">
               <div class="project">
                 <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
+                <div class="tags" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+                  <transition name="tagsIn">
+                    <ul v-if="project.showTags">
+                      <li v-for="(tag, index) in project.tags" :key="index">
+                        {{ tag }}
+                      </li>
+                    </ul>
+                  </transition>
+                </div>
               </div>
             </li>
           </ul>
@@ -62,6 +80,7 @@ export default {
           link: 'https://eager-franklin-097a07.netlify.com',
           github: 'https://github.com/mru24/FM_World_UK',
           tags: ['HTML', 'VUE JS', 'SASS', 'Bootstrap'],
+          showTags: false,
           category: 'js'
         },
         {
@@ -70,6 +89,7 @@ export default {
           link: 'https://vigilant-shirley-59d618.netlify.com',
           github: 'https://github.com/mru24/Yet-another-Portfolio',
           tags: ['HTML', 'VUE JS', 'SASS', 'Firebase'],
+          showTags: false,
           category: 'js'
         }
       ]
@@ -78,6 +98,14 @@ export default {
   methods: {
     changeCat: function (data) {
       this.projectsToShow = data
+    },
+    showTags: function () {
+      this.projects.showTags = true
+      console.log('showTags')
+    },
+    hideTags: function () {
+      this.projects.showTags = false
+      console.log('hideTags')
     }
   }
 }
@@ -93,7 +121,6 @@ export default {
     width: 80%
     margin: 30px auto
     border-bottom: $borderLt
-    background: red
     ul
       display: flex
       flex-direction: row
@@ -122,8 +149,41 @@ export default {
             padding: 5px
             margin: 10px
             text-transform: uppercase
+            overflow: hidden
+            position: relative
             @include bp-mobile
-              width: 150px
-              height: 200px
+              width: 170px
+              height: 250px
               margin: 5px
+            .tags
+              position: absolute
+              top: 0
+              left: 0
+              width: 100%
+              height: 100%
+              display: flex
+              align-items: center
+              ul
+                width: 100%
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: center
+                li
+                  border: $borderLt
+                  padding: 2px 5px
+                  font-size: 10px
+                  margin: 4px
+
+.tagsIn-enter-active
+  animation: slideIn .5s
+.tagsIn-leave-active
+  animation: slideIn .5s reverse
+
+@keyframes slideIn
+  from
+    max-height: 0
+  to
+    max-height: 100%
+
 </style>
