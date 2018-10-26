@@ -12,9 +12,9 @@
         <transition-group>
           <ul v-for="(project, index) in projects" :key="index">
             <li v-if="projectsToShow == project.category">
-              <div class="project" @mouseenter="showTags" @mouseleave="hideTags">
-                <h6><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h6>
-                <div class="tags" v-if="project.showTags">
+              <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+                <h6 class="title"><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h6>
+                <div class="tags">
                   <transition name="tagsIn">
                     <ul v-if="project.showTags">
                       <li v-for="(tag, index) in project.tags" :key="index">
@@ -26,9 +26,9 @@
               </div>
             </li>
             <li v-else-if="projectsToShow == 'all'">
-              <div class="project">
-                <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
-                <div class="tags" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+              <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+                <h6 class="title"><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h6>
+                <div class="tags">
                   <transition name="tagsIn">
                     <ul v-if="project.showTags">
                       <li v-for="(tag, index) in project.tags" :key="index">
@@ -94,10 +94,37 @@ export default {
         },
         {
           name: 'PropertiesHaven',
-          info: 'This Portfolio',
+          info: '',
           link: 'https://nifty-bardeen-3df8c6.netlify.com/',
           github: 'https://github.com/mru24/PropertiesHaven',
           tags: ['HTML', 'SCSS', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          name: 'Profile Widget',
+          info: '',
+          link: 'https://jolly-fermi-d95467.netlify.com/',
+          github: 'https://github.com/mru24/Portfolio-Widget',
+          tags: ['HTML', 'SCSS', 'Bootstrap', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          name: 'School',
+          info: '',
+          link: 'https://musing-hermann-a64cac.netlify.com/',
+          github: 'https://github.com/mru24/School',
+          tags: ['HTML', 'SCSS', 'Bootstrap', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          name: 'Ping - JS Game',
+          info: '',
+          link: 'https://pensive-carson-b3e5e8.netlify.com/',
+          github: 'https://github.com/mru24/Ping_JS_Game',
+          tags: ['JavaScript', 'HTML', 'SASS'],
           showTags: false,
           category: 'resp'
         }
@@ -110,11 +137,9 @@ export default {
     },
     showTags: function () {
       this.projects.showTags = true
-      console.log('showTags')
     },
     hideTags: function () {
       this.projects.showTags = false
-      console.log('hideTags')
     }
   }
 }
@@ -163,14 +188,14 @@ export default {
               width: 170px
               height: 250px
               margin: 5px
-            h6
+            .title
+              font-size: 18px
               font-weight: 200
             .tags
               position: absolute
-              top: 0
+              top: 50%
               left: 0
               width: 100%
-              height: 100%
               display: flex
               align-items: center
               ul
@@ -185,15 +210,10 @@ export default {
                   font-size: 10px
                   margin: 4px
 
-.tagsIn-enter-active
-  animation: slideIn .5s
-.tagsIn-leave-active
-  animation: slideIn .5s reverse
-
-@keyframes slideIn
-  from
-    max-height: 0
-  to
-    max-height: 100%
+.tagsIn-enter-active, .tagsIn-leave-active
+  transition: all .5s easy-in-out
+.tagsIn-enter, .tagsIn-leave-to
+  transform: scale(0)
+  opacity: 0
 
 </style>
