@@ -13,7 +13,7 @@
           <ul v-for="(project, index) in projects" :key="index">
             <li v-if="projectsToShow == project.category">
               <div class="project" @mouseenter="showTags" @mouseleave="hideTags">
-                <h4><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h4>
+                <h6><a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">{{ project.name }}</a></h6>
                 <div class="tags" v-if="project.showTags">
                   <transition name="tagsIn">
                     <ul v-if="project.showTags">
@@ -91,6 +91,15 @@ export default {
           tags: ['HTML', 'VUE JS', 'SASS', 'Firebase'],
           showTags: false,
           category: 'js'
+        },
+        {
+          name: 'PropertiesHaven',
+          info: 'This Portfolio',
+          link: 'https://nifty-bardeen-3df8c6.netlify.com/',
+          github: 'https://github.com/mru24/PropertiesHaven',
+          tags: ['HTML', 'SCSS', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
         }
       ]
     }
@@ -148,13 +157,14 @@ export default {
             border: $borderLt
             padding: 5px
             margin: 10px
-            text-transform: uppercase
             overflow: hidden
             position: relative
             @include bp-mobile
               width: 170px
               height: 250px
               margin: 5px
+            h6
+              font-weight: 200
             .tags
               position: absolute
               top: 0

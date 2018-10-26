@@ -2,12 +2,14 @@
   <div>
     <div class="container">
       <div class="about">
-        <h1 class="title">
-          Val Wroblewski<br>
-          <span>Web Designer and Developer.</span>
+        <h1>
+          Val Wroblewski
         </h1>
+        <h6>
+          Web Designer and Developer.
+        </h6>
         <p>
-          Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place.
+          "Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place."
         </p>
         <div class="arrow">
           <router-link :to="'/work'">Check out my work</router-link>
@@ -48,27 +50,30 @@ export default {
     @include bp-mobileSM
       display: block
       height: auto
-    .title
+    h1, h6
+      font-weight: 200
+    h1
       font-size: 60px
-      margin-bottom: 50px
       @include bp-mobile
         font-size: 40px
       @include bp-mobileSM
-        margin-top: 20px
-        margin-bottom: 80px
+        margin-top: 10px
         font-size: 26px
-      span
-        display: block
-        font-size: 30px
-        @include bp-mobile
-          font-size: 16px
-        @include bp-mobileSM
-          font-size: 14px
+    h6
+      margin-left: 10px
+      font-size: 17px
+      @include bp-mobile
+        font-size: 16px
+      @include bp-mobileSM
+        font-size: 14px
+        margin-bottom: 100px
     p
       color: $bgColor + 120
       font-size: 20px
       font-weight: 300
+      margin: 40px
       @include bp-mobileSM
+        margin: 20px
         font-size: 16px
     .arrow
       margin: 90px auto 0 auto
