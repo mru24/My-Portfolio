@@ -23,6 +23,10 @@
                     </ul>
                   </transition>
                 </div>
+                <a class="footer" :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
+                  <img :src="githubIcon" alt="Github Icon" width="20">
+                  <h6 class="title">Github</h6>
+                </a>
               </div>
             </li>
             <li v-else-if="projectsToShow == 'all'">
@@ -37,10 +41,14 @@
                     </ul>
                   </transition>
                 </div>
+                <a class="footer" :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
+                  <img :src="githubIcon" alt="Github Icon" width="20">
+                  <h6 class="title">Github</h6>
+                </a>
               </div>
             </li>
           </ul>
-      </transition-group>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -51,6 +59,7 @@ export default {
   data () {
     return {
       projectsToShow: 'all',
+      githubIcon: 'static/Images/Social/gh.png',
       workNav: [
         {
           name: 'all',
@@ -126,7 +135,25 @@ export default {
           github: 'https://github.com/mru24/Ping_JS_Game',
           tags: ['JavaScript', 'HTML', 'SASS'],
           showTags: false,
+          category: 'js'
+        },
+        {
+          name: 'School',
+          info: '',
+          link: 'https://musing-hermann-a64cac.netlify.com/',
+          github: 'https://github.com/mru24/School',
+          tags: ['HTML', 'SCSS', 'Bootstrap', 'jQUERY'],
+          showTags: false,
           category: 'resp'
+        },
+        {
+          name: 'Ping - JS Game',
+          info: '',
+          link: 'https://pensive-carson-b3e5e8.netlify.com/',
+          github: 'https://github.com/mru24/Ping_JS_Game',
+          tags: ['JavaScript', 'HTML', 'SASS'],
+          showTags: false,
+          category: 'js'
         }
       ]
     }
@@ -167,6 +194,7 @@ export default {
         text-transform: capitalize
         cursor: pointer
   .workContainer
+    height: auto
     span
       display: flex
       flex-direction: row
@@ -198,6 +226,7 @@ export default {
               width: 100%
               display: flex
               align-items: center
+              opacity: .5
               ul
                 width: 100%
                 display: flex
@@ -209,6 +238,15 @@ export default {
                   padding: 2px 5px
                   font-size: 10px
                   margin: 4px
+            .footer
+              position: absolute
+              bottom: 5px
+              left: 10px
+              display: flex
+              flex-direction: row
+              align-items: center
+              .title
+                margin-left: 10px
 
 .tagsIn-enter-active, .tagsIn-leave-active
   transition: all .5s easy-in-out

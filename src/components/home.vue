@@ -8,9 +8,11 @@
         <h6>
           Web Designer and Developer.
         </h6>
-        <p>
-          "Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place."
-        </p>
+        <div class="info">
+          <p>
+            "Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place."
+          </p>
+        </div>
         <div class="arrow">
           <router-link :to="'/work'">Check out my work</router-link>
         </div>
@@ -67,14 +69,16 @@ export default {
       @include bp-mobileSM
         font-size: 14px
         margin-bottom: 100px
-    p
-      color: $bgColor + 120
-      font-size: 20px
-      font-weight: 300
-      margin: 40px
-      @include bp-mobileSM
-        margin: 20px
-        font-size: 16px
+    .info
+      margin-top: 90px
+      margin-left: 90px
+      p
+        color: $bgColor + 120
+        font-size: 20px
+        font-weight: 300
+        @include bp-mobileSM
+          margin: 20px
+          font-size: 16px
     .arrow
       margin: 90px auto 0 auto
       width: 120px
