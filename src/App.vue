@@ -41,8 +41,8 @@ body
     .container
       position: absolute
       top: 0
-      left: 20%
-      width: 60%
+      left: 15%
+      width: 70%
       @include bp-mobileSM
         left: 4%
         width: 92%

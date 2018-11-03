@@ -69,7 +69,7 @@ export default {
 nav
   .navbar
     position: fixed
-    z-index: 999
+    z-index: 9998
     top: 0
     left: 0
     width: 100%
@@ -107,7 +107,7 @@ nav
   $pos: 40px
   $size: 80px
   position: fixed
-  z-index: 999
+  z-index: 9999
   top: $pos
   right: $pos
   width: $size

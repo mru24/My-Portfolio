@@ -2,11 +2,16 @@
   <div>
     <div class="container">
       <div class="about">
-        <h1>
-          Val Wroblewski
-        </h1>
+        <div class="mainTitle">
+          <div class="image">
+            <img src="static/Images/Waldi.jpg" alt="" width="95">
+          </div>
+          <h1>
+            Val Wroblewski
+          </h1>
+        </div>
         <h6>
-          Web Designer and Developer.
+          Web Developer.
         </h6>
         <div class="info">
           <p>
@@ -14,7 +19,9 @@
           </p>
         </div>
         <div class="arrow">
-          <router-link :to="'/work'">Check out my work</router-link>
+          <router-link :to="'/work'">
+            <img :src="arrowDown" alt="arrowDown" width="90">
+          </router-link>
         </div>
       </div>
       <div class="socialLinks">
@@ -33,7 +40,8 @@ export default {
   },
   data () {
     return {
-      show: true
+      show: true,
+      arrowDown: 'static/Images/arrow-down.png'
     }
   }
 }
@@ -54,16 +62,26 @@ export default {
       height: auto
     h1, h6
       font-weight: 200
-    h1
-      font-size: 60px
-      @include bp-mobile
-        font-size: 40px
-      @include bp-mobileSM
-        margin-top: 10px
-        font-size: 26px
+    .mainTitle
+      display: flex
+      flex-direction: row
+      align-items: center
+      .image
+        width: 80px
+        height: 80px
+        border-radius: 50%
+        margin-right: 30px
+        overflow: hidden
+      h1
+        font-size: 60px
+        @include bp-mobile
+          font-size: 40px
+        @include bp-mobileSM
+          margin-top: 10px
+          font-size: 26px
     h6
       margin-left: 10px
-      font-size: 17px
+      font-size: 20px
       @include bp-mobile
         font-size: 16px
       @include bp-mobileSM
@@ -73,9 +91,10 @@ export default {
       margin-top: 90px
       margin-left: 90px
       p
-        color: $bgColor + 120
-        font-size: 20px
+        color: $bgColor + 180
+        font-size: 24px
         font-weight: 300
+        letter-spacing: 4px
         @include bp-mobileSM
           margin: 20px
           font-size: 16px

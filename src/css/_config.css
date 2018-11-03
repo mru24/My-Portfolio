@@ -29,10 +29,10 @@ body .mainContainer .container {
 
 .title {
   font-weight: 300;
-  color: #7c7d8c;
+  color: #cccddc;
   transition: .7s;
 }
 
 .title:hover {
-  color: #cccddc;
+  color: white;
 }
