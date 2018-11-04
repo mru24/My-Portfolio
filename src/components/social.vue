@@ -61,9 +61,9 @@ ul
           width: $size
           height: $size
           transition: .5s
-          opacity: .4
+          opacity: .6
           &:hover
-            opacity: .8
+            opacity: 1
 
 .title
   position: absolute
