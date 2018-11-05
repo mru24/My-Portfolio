@@ -5,7 +5,7 @@
         <transition>
           <div class="mainTitle" v-if="el1">
             <div class="image">
-              <img src="static/Images/Waldi.jpg" alt="" width="95">
+              <img src="static/Images/Waldi.jpg" alt="My photo">
             </div>
             <h1>
               Val Wroblewski
@@ -26,7 +26,7 @@
         </transition>
         <div class="arrow">
           <router-link :to="'/work'">
-            <img :src="arrowDown" alt="arrowDown" width="90">
+            <img :src="arrowDown" alt="arrowDown">
           </router-link>
         </div>
       </div>
@@ -100,6 +100,12 @@ export default {
         border-radius: 50%
         margin-right: 30px
         overflow: hidden
+        img
+          width: 115%
+        @include bp-mobileSM
+          width: 40px
+          height: 40px
+          margin-right: 10px
       h1
         font-size: 60px
         @include bp-mobile
@@ -118,25 +124,31 @@ export default {
     .info
       margin-top: 90px
       margin-left: 90px
+      @include bp-mobileSM
+        margin-top: 30px
+        margin-left: 20px
       p
         color: $bgColor + 180
         font-size: 24px
         font-weight: 300
         letter-spacing: 4px
         @include bp-mobileSM
-          margin: 20px
+          margin: 10px
           font-size: 16px
     .arrow
       position: fixed
       bottom: 20%
       left: 50%
       transform: translateX(-50%)
-      width: 120px
+      width: 100px
       text-align: center
       cursor: pointer
       transition: .5s
       @include bp-mobileSM
-        margin: 30px auto
+        margin: auto
+        width: 60px
+      img
+        width: 100%
   .skills
     width: 100%
     margin-top: 5%
