@@ -58,7 +58,7 @@ export default {
   },
   created () {
     var vm = this
-    var time = 3000
+    var time = 500
     setTimeout(function () {
       vm.el1 = true
     }, time)
@@ -81,12 +81,11 @@ export default {
 .container
   .about
     width: 100%
-    height: 90vh
-    display: flex
-    flex-direction: column
-    justify-content: center
+    height: 100vh
+    position: relative
+    padding-top: 20%
     @include bp-mobileSM
-      display: block
+      padding-top: 10px
       height: auto
     h1, h6
       font-weight: 200

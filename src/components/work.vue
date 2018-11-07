@@ -216,7 +216,6 @@ export default {
         transition: .5s
         li
           .project
-            &titleHeight
             background: rgba($bgColor, 0.8)
             background-size: cover
             background-repeat: no-repeat
@@ -227,10 +226,10 @@ export default {
             margin: 10px
             overflow: hidden
             position: relative
-            @include bp-mobile
-              width: 170px
-              height: 250px
-              margin: 5px
+            // @include bp-mobile
+            //   width: 170px
+            //   height: 250px
+            //   margin: 5px
             .projectInner
               position: absolute
               top: -100%
