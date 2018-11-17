@@ -24,17 +24,19 @@
             </p>
           </div>
         </transition>
-        <div class="arrow">
-          <router-link :to="'/work'">
-            <img :src="arrowDown" alt="arrowDown">
-          </router-link>
-        </div>
       </div>
-      <transition>
-        <div class="socialLinks" v-if="el4">
-          <social />
-        </div>
-      </transition>
+    <transition>
+      <div class="arrow" v-if="el4">
+        <router-link :to="'/work'">
+          <img :src="arrowDown" alt="arrowDown">
+        </router-link>
+      </div>
+    </transition>
+    <transition>
+      <div class="socialLinks" v-if="el5">
+        <social />
+      </div>
+    </transition>
     </div>
   </div>
 </template>
@@ -52,6 +54,7 @@ export default {
       el2: false,
       el3: false,
       el4: false,
+      el5: false,
       show: true,
       arrowDown: 'static/Images/arrow-down.png'
     }
@@ -70,6 +73,9 @@ export default {
     }, time + 3000)
     setTimeout(function () {
       vm.el4 = true
+    }, time + 4000)
+    setTimeout(function () {
+      vm.el5 = true
     }, time + 6000)
   }
 }
@@ -79,11 +85,13 @@ export default {
 @import 'config'
 
 .container
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   .about
     width: 100%
-    height: 100vh
+    padding-top: 10%
     position: relative
-    padding-top: 20%
     @include bp-mobileSM
       padding-top: 10px
       height: auto
@@ -101,14 +109,17 @@ export default {
         overflow: hidden
         img
           width: 115%
+        @include bp-mobile
+          width: 60px
+          height: 60px
         @include bp-mobileSM
           width: 40px
           height: 40px
           margin-right: 10px
       h1
-        font-size: 60px
+        font-size: 40px
         @include bp-mobile
-          font-size: 40px
+          font-size: 30px
         @include bp-mobileSM
           margin-top: 10px
           font-size: 26px
@@ -123,31 +134,33 @@ export default {
     .info
       margin-top: 90px
       margin-left: 90px
+      @include bp-mobile
+        margin-top: 40px
       @include bp-mobileSM
         margin-top: 30px
         margin-left: 20px
       p
         color: $bgColor + 180
-        font-size: 24px
+        font-size: 3vh
         font-weight: 300
         letter-spacing: 4px
+        @include bp-mobile
+          font-size: 18px
         @include bp-mobileSM
           margin: 10px
           font-size: 16px
-    .arrow
-      position: fixed
-      bottom: 20%
-      left: 50%
-      transform: translateX(-50%)
-      width: 100px
-      text-align: center
-      cursor: pointer
-      transition: .5s
-      @include bp-mobileSM
-        margin: auto
-        width: 60px
-      img
-        width: 100%
+  .arrow
+    margin: auto
+    margin-top: 20px
+    width: 80px
+    text-align: center
+    cursor: pointer
+    transition: .5s
+    @include bp-mobileSM
+      margin: auto
+      width: 60px
+    img
+      width: 100%
   .skills
     width: 100%
     margin-top: 5%

@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-$size: 70px
+$size: 60px
 
 ul
   width: 350px
