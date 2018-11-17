@@ -97,7 +97,18 @@ export default {
       ],
       projects: [
         {
-          id: 1,
+          id: 8,
+          name: 'The City',
+          info: 'Responsive HTML, CSS, SASS web page',
+          link: 'https://heuristic-snyder-80745a.netlify.com/',
+          github: 'https://github.com/mru24/The-City',
+          image: '',
+          tags: ['HTML', 'SASS'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          id: 7,
           name: 'Kat FMWorld UK',
           info: 'My first commercial project',
           link: 'https://eager-franklin-097a07.netlify.com',
@@ -108,7 +119,7 @@ export default {
           category: 'js'
         },
         {
-          id: 2,
+          id: 6,
           name: 'My Portfolio',
           info: 'This Portfolio',
           link: 'https://vigilant-shirley-59d618.netlify.com',
@@ -119,7 +130,7 @@ export default {
           category: 'js'
         },
         {
-          id: 3,
+          id: 5,
           name: 'PropertiesHaven',
           info: '',
           link: 'https://nifty-bardeen-3df8c6.netlify.com/',
@@ -141,7 +152,7 @@ export default {
           category: 'resp'
         },
         {
-          id: 5,
+          id: 3,
           name: 'School',
           info: '',
           link: 'https://musing-hermann-a64cac.netlify.com/',
@@ -152,7 +163,7 @@ export default {
           category: 'resp'
         },
         {
-          id: 6,
+          id: 2,
           name: 'Ping - JS Game',
           info: '',
           link: 'https://pensive-carson-b3e5e8.netlify.com/',
@@ -163,7 +174,7 @@ export default {
           category: 'js'
         },
         {
-          id: 7,
+          id: 1,
           name: 'Rossmann Properties',
           info: 'New Vue JS project. Not finished yet',
           link: 'https://trusting-ride-753117.netlify.com/',
