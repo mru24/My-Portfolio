@@ -177,7 +177,7 @@ export default {
           id: 1,
           name: 'Rossmann Properties',
           info: 'New Vue JS project. Not finished yet',
-          link: 'https://trusting-ride-753117.netlify.com/',
+          link: 'https://nifty-curie-9f3992.netlify.com/',
           github: 'https://github.com/mru24/RossmannProperties',
           image: 'no image',
           tags: ['HTML', 'Vue JS', 'SASS'],
