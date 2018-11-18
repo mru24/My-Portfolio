@@ -102,7 +102,7 @@ export default {
           info: 'Responsive HTML, CSS, SASS web page',
           link: 'https://heuristic-snyder-80745a.netlify.com/',
           github: 'https://github.com/mru24/The-City',
-          image: '',
+          image: 'theCity.jpg',
           tags: ['HTML', 'SASS'],
           showTags: false,
           category: 'resp'
@@ -124,7 +124,7 @@ export default {
           info: 'This Portfolio',
           link: 'https://vigilant-shirley-59d618.netlify.com',
           github: 'https://github.com/mru24/Yet-another-Portfolio',
-          image: '',
+          image: 'portfolio.jpg',
           tags: ['HTML', 'VUE JS', 'SASS', 'Firebase'],
           showTags: false,
           category: 'js'
@@ -179,7 +179,7 @@ export default {
           info: 'New Vue JS project. Not finished yet',
           link: 'https://nifty-curie-9f3992.netlify.com/',
           github: 'https://github.com/mru24/RossmannProperties',
-          image: 'no image',
+          image: 'rossmann.jpg',
           tags: ['HTML', 'Vue JS', 'SASS'],
           showTags: false,
           category: 'js'
@@ -232,7 +232,7 @@ export default {
             background-repeat: no-repeat
             background-position: top center
             width: 300px
-            height: 360px
+            height: 340px
             border: $borderLt
             margin: 10px
             overflow: hidden
