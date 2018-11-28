@@ -90,7 +90,6 @@ export default {
   justify-content: space-between
   .about
     width: 100%
-    padding-top: 10%
     position: relative
     @include bp-mobileSM
       padding-top: 10px

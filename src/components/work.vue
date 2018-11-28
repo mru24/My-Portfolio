@@ -97,6 +97,17 @@ export default {
       ],
       projects: [
         {
+          id: 9,
+          name: 'Weather Widget',
+          info: 'Simple Vue JS weather app with openweathermap API',
+          link: 'https://laughing-shirley-059b51.netlify.com',
+          github: 'https://github.com/mru24/weather-widget',
+          image: 'weatherWidget.jpg',
+          tags: ['Vue JS', 'Axios', 'HTML', 'Bootstrap', 'SASS'],
+          showTags: false,
+          category: 'js'
+        },
+        {
           id: 8,
           name: 'The City',
           info: 'Responsive HTML, CSS, SASS web page',
