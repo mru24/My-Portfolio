@@ -65,8 +65,6 @@
 </template>
 
 <script>
-import db from './firebaseInit'
-
 export default {
   data () {
     return {
@@ -97,30 +95,113 @@ export default {
           data: 'php'
         }
       ],
-      projects: []
+      projects: [
+        {
+          id: 9,
+          name: 'Weather Widget',
+          info: 'Simple Vue JS weather app with openweathermap API',
+          link: 'https://laughing-shirley-059b51.netlify.com',
+          github: 'https://github.com/mru24/weather-widget',
+          image: 'weatherWidget.jpg',
+          tags: ['Vue JS', 'Axios', 'HTML', 'Bootstrap', 'SASS'],
+          showTags: false,
+          category: 'js'
+        },
+        {
+          id: 8,
+          name: 'The City',
+          info: 'Responsive HTML, CSS, SASS web page',
+          link: 'https://heuristic-snyder-80745a.netlify.com/',
+          github: 'https://github.com/mru24/The-City',
+          image: 'theCity.jpg',
+          tags: ['HTML', 'SASS'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          id: 7,
+          name: 'Kat FMWorld UK',
+          info: 'My first commercial project',
+          link: 'https://eager-franklin-097a07.netlify.com',
+          github: 'https://github.com/mru24/FM_World_UK',
+          image: 'fmworlduk.jpg',
+          tags: ['HTML', 'VUE JS', 'SASS', 'Bootstrap'],
+          showTags: false,
+          category: 'js'
+        },
+        {
+          id: 6,
+          name: 'My Portfolio',
+          info: 'This Portfolio',
+          link: 'https://vigilant-shirley-59d618.netlify.com',
+          github: 'https://github.com/mru24/Yet-another-Portfolio',
+          image: 'portfolio.jpg',
+          tags: ['HTML', 'VUE JS', 'SASS', 'Firebase'],
+          showTags: false,
+          category: 'js'
+        },
+        {
+          id: 5,
+          name: 'PropertiesHaven',
+          info: '',
+          link: 'https://nifty-bardeen-3df8c6.netlify.com/',
+          github: 'https://github.com/mru24/PropertiesHaven',
+          image: 'propertiesHaven.jpg',
+          tags: ['HTML', 'SCSS', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          id: 4,
+          name: 'Profile Widget',
+          info: '',
+          link: 'https://jolly-fermi-d95467.netlify.com/',
+          github: 'https://github.com/mru24/Portfolio-Widget',
+          image: 'profileWidget.jpg',
+          tags: ['HTML', 'SCSS', 'Bootstrap', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          id: 3,
+          name: 'School',
+          info: '',
+          link: 'https://musing-hermann-a64cac.netlify.com/',
+          github: 'https://github.com/mru24/School',
+          image: 'school.jpg',
+          tags: ['HTML', 'SCSS', 'Bootstrap', 'jQUERY'],
+          showTags: false,
+          category: 'resp'
+        },
+        {
+          id: 2,
+          name: 'Ping - JS Game',
+          info: '',
+          link: 'https://pensive-carson-b3e5e8.netlify.com/',
+          github: 'https://github.com/mru24/Ping_JS_Game',
+          image: 'Ping.jpg',
+          tags: ['JavaScript', 'HTML', 'SASS'],
+          showTags: false,
+          category: 'js'
+        },
+        {
+          id: 1,
+          name: 'Rossmann Properties',
+          info: 'New Vue JS project. Not finished yet',
+          link: 'https://nifty-curie-9f3992.netlify.com/',
+          github: 'https://github.com/mru24/RossmannProperties',
+          image: 'rossmann.jpg',
+          tags: ['HTML', 'Vue JS', 'SASS'],
+          showTags: false,
+          category: 'js'
+        }
+      ]
     }
   },
   methods: {
     changeCat: function (data) {
       this.projectsToShow = data
     }
-  },
-  created () {
-    db.collection('Project').get().then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        const data = {
-          'name': doc.data().name,
-          'info': doc.data().info,
-          'link': doc.data().link,
-          'github': doc.data().github,
-          'image': doc.data().image,
-          'tags': doc.data().item.tag,
-          'showTags': doc.data().showTags,
-          'category': doc.data().category
-        }
-        this.projects.push(data)
-      })
-    })
   }
 }
 </script>
