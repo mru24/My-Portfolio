@@ -139,7 +139,7 @@ export default {
       display: flex
       flex-direction: row
       justify-content: space-around
-      @include bp-mobileSM
+      @include bp-mobile
         flex-direction: column
         justify-content: flex-start
         align-items: flex-start
@@ -167,10 +167,6 @@ export default {
             margin: 10px
             overflow: hidden
             position: relative
-            // @include bp-mobile
-            //   width: 170px
-            //   height: 250px
-            //   margin: 5px
             .projectInner
               position: absolute
               top: -100%

@@ -19,19 +19,15 @@
         </transition>
         <transition>
           <div class="info" v-if="el3">
+            <router-link :to="'/work'">
             <p>
               "Turning passion into career. My expertise is in the area of responsive design. I strive to make the web a nice and pleasant place."
             </p>
+            <span>click to see my work</span>
+            </router-link>
           </div>
         </transition>
       </div>
-    <transition>
-      <div class="arrow" v-if="el4">
-        <router-link :to="'/work'">
-          <img :src="arrowDown" alt="arrowDown">
-        </router-link>
-      </div>
-    </transition>
     <transition>
       <div class="socialLinks" v-if="el5">
         <social />
@@ -61,7 +57,7 @@ export default {
   },
   created () {
     var vm = this
-    var time = 500
+    var time = 1500
     setTimeout(function () {
       vm.el1 = true
     }, time)
@@ -86,10 +82,11 @@ export default {
 
 .container
   display: flex
-  flex-direction: column
-  justify-content: space-between
+  justify-content: center
+  align-items: center
   .about
     width: 100%
+    height: 60vh
     position: relative
     @include bp-mobileSM
       padding-top: 10px
@@ -133,8 +130,9 @@ export default {
     .info
       margin-top: 90px
       margin-left: 90px
+      position: relative
       @include bp-mobile
-        margin-top: 40px
+        margin-top: 90px
       @include bp-mobileSM
         margin-top: 30px
         margin-left: 20px
@@ -148,18 +146,19 @@ export default {
         @include bp-mobileSM
           margin: 10px
           font-size: 16px
-  .arrow
-    margin: auto
-    margin-top: 20px
-    width: 80px
-    text-align: center
-    cursor: pointer
-    transition: .5s
-    @include bp-mobileSM
-      margin: auto
-      width: 60px
-    img
-      width: 100%
+      span
+        position: absolute
+        top: 30px
+        // display: none
+        opacity: 0
+        right: 150px
+        transition: .5s
+        @include bp-mobile
+          right: 0
+      p:hover ~ span
+        // display: block
+        opacity: 1
+        top: -30px
   .skills
     width: 100%
     margin-top: 5%

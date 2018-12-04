@@ -79,6 +79,7 @@ export default {
 @import 'config'
 $formBgColor: #cccccc
 .container
+  margin-top: 30px
   .contactInfo
     border: 2px solid $bgColor + 30
     border-radius: $radiusSm
@@ -103,8 +104,8 @@ $formBgColor: #cccccc
           font-size: 16px
   form
     width: 100%
-    margin: 30px auto
-    margin-bottom: 160px
+    // margin: 30px auto
+    margin-bottom: 40px
     border: 2px solid $bgColor + 30
     border-radius: $radiusLg
     padding: 20px
@@ -118,12 +119,18 @@ $formBgColor: #cccccc
       font-size: 26px
       padding-left: 10px
       background-color: $formBgColor
+      transition: .5s
+      &:focus
+        background-color: white
     textarea
       background-color: $formBgColor
       height: 150px
       resize: none
       font-size: 18px
       padding: 10px
+      transition: .5s
+      &:focus
+        background-color: white
     button
       display: block
       margin: 20px auto

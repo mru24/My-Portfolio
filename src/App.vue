@@ -3,9 +3,9 @@
     <Navbar />
     <div class="mainContainer">
       <AnimBackground />
-      <transition>
+      <!-- <transition mode="out-in"> -->
         <router-view/>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>
@@ -43,16 +43,26 @@ body
       top: 0
       left: 15%
       width: 70%
+      height: 100%
+      @include bp-mobile
+        height: auto
       @include bp-mobileSM
+        height: auto
         left: 4%
         width: 92%
 
-.v-enter-active
-  animation: fadeIn .2s
+// .v-enter-active, .v-leave-active
+//   transition: all .4s
+// .v-enter
+//   transform: translateX(100%)
+//   opacity: 0
+// .v-leave-to
+//   transform: translateX(-100%)
+//   opacity: 0
 
-@keyframes fadeIn
-  from
-    opacity: 0
-  to
-    opacity: 1
+// @keyframes fadeIn
+//   from
+//     opacity: 0
+//   to
+//     opacity: 1
 </style>
