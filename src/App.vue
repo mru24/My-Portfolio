@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar/>
     <div class="mainContainer">
-      <AnimBackground />
+      <AnimBackground/>
       <!-- <transition mode="out-in"> -->
         <router-view/>
       <!-- </transition> -->
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from './components/navbar'
 import AnimBackground from './components/animBG'
+import Footer from '@/components/footer'
+
 export default {
   components: {
     Navbar,
-    AnimBackground
+    AnimBackground,
+    Footer
   },
   data () {
     return {

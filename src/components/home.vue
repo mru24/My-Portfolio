@@ -57,13 +57,13 @@ export default {
   },
   created () {
     var vm = this
-    var time = 1500
+    var time = 1000
     setTimeout(function () {
       vm.el1 = true
     }, time)
     setTimeout(function () {
       vm.el2 = true
-    }, time + 2000)
+    }, time + 1500)
     setTimeout(function () {
       vm.el3 = true
     }, time + 3000)

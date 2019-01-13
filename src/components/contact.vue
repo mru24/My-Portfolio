@@ -105,7 +105,7 @@ $formBgColor: #cccccc
   form
     width: 100%
     // margin: 30px auto
-    margin-bottom: 40px
+    margin-bottom: 10px
     border: 2px solid $bgColor + 30
     border-radius: $radiusLg
     padding: 20px

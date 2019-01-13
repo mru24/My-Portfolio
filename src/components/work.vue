@@ -145,6 +145,8 @@ export default {
         align-items: flex-start
       li
         text-transform: capitalize
+        font-size: 1.4em
+        font-weight: bold
         cursor: pointer
   .workContainer
     height: auto
@@ -156,17 +158,21 @@ export default {
       ul
         transition: .5s
         li
+
           .project
             background: rgba($bgColor, 0.8)
             background-size: cover
             background-repeat: no-repeat
-            background-position: top center
-            width: 300px
+            background-position: top
+            width: 450px
             height: 340px
             border: $borderLt
-            margin: 10px
+            margin: 3px
             overflow: hidden
             position: relative
+            @include bp-mobile
+              width: 320px
+              height: 280px
             .projectInner
               position: absolute
               top: -100%
