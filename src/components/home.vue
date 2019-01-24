@@ -88,9 +88,6 @@ export default {
     width: 100%
     height: 60vh
     position: relative
-    @include bp-mobileSM
-      padding-top: 10px
-      height: auto
     h1, h6
       font-weight: 200
     .mainTitle
@@ -108,34 +105,21 @@ export default {
         @include bp-mobile
           width: 60px
           height: 60px
-        @include bp-mobileSM
-          width: 40px
-          height: 40px
-          margin-right: 10px
       h1
         font-size: 40px
         @include bp-mobile
           font-size: 30px
-        @include bp-mobileSM
-          margin-top: 10px
-          font-size: 26px
     h6
       margin-left: 10px
       font-size: 20px
       @include bp-mobile
         font-size: 16px
-      @include bp-mobileSM
-        font-size: 14px
-        margin-bottom: 100px
     .info
       margin-top: 90px
       margin-left: 90px
       position: relative
       @include bp-mobile
         margin-top: 90px
-      @include bp-mobileSM
-        margin-top: 30px
-        margin-left: 20px
       p
         color: $bgColor + 180
         font-size: 3vh
@@ -143,9 +127,6 @@ export default {
         letter-spacing: 4px
         @include bp-mobile
           font-size: 18px
-        @include bp-mobileSM
-          margin: 10px
-          font-size: 16px
       span
         position: absolute
         top: 30px
@@ -156,7 +137,6 @@ export default {
         @include bp-mobile
           right: 0
       p:hover ~ span
-        // display: block
         opacity: 1
         top: -30px
   .skills
@@ -167,6 +147,49 @@ export default {
     bottom: 2%
     left: 50%
     transform: translateX(-50%)
+
+@include bp-mobileSM
+  .container
+    .about
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding-top: 20%
+      height: auto
+      h1, h6
+        text-align: center
+      .mainTitle
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .image
+          width: 140px
+          height: 140px
+          margin: auto
+          img
+        h1
+          margin-top: 10px
+          font-size: 26px
+      h6
+        font-size: 14px
+      .info
+        margin: auto
+        margin-top: 30px
+        p
+          margin: 10px
+          font-size: 16px
+        span
+          color: yellow
+          font-size: 14px
+        p:hover ~ span
+          top: -20px
+    .skills
+      width: 100%
+      margin-top: 5%
+    .socialLinks
+      position: fixed
+      top: 2%
+      left: 25%
 
 .v-enter-active, .v-leave-active
   transition: all 1s
