@@ -10,7 +10,7 @@
       </div>
       <div class="workContainer">
         <transition-group>
-          <ul v-for="(project, index) in projects" :key="index">
+          <ul v-for="project in sortProjects(projects)" :key="project.id">
             <li v-if="projectsToShow == project.category">
               <a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">
                 <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false"
@@ -101,6 +101,11 @@ export default {
     }
   },
   methods: {
+    sortProjects: function (el) {
+      return el.slice().sort(function (a, b) {
+        return a.id - b.id
+      })
+    },
     changeCat: function (data) {
       this.projectsToShow = data
     }
@@ -116,7 +121,8 @@ export default {
           'image': doc.data().image,
           'tags': doc.data().item.tag,
           'showTags': doc.data().showTags,
-          'category': doc.data().category
+          'category': doc.data().category,
+          'id': doc.data().id
         }
         this.projects.push(data)
       })
