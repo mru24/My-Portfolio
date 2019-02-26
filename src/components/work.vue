@@ -13,8 +13,9 @@
           <ul v-for="project in sortProjects(projects)" :key="project.id">
             <li v-if="projectsToShow == project.category">
               <a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">
-                <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false"
-                :style="{backgroundImage: 'url(static/Images/work/' +  project.image + ')'}">
+
+                <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+                  <img :src="'static/Images/work/' + project.image" alt="">
                   <h6 class="title">
                     {{ project.name }}
                   </h6>
@@ -28,19 +29,25 @@
                       </ul>
                     </transition>
                   </div>
-                  <a class="footer" :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
-                    <img :src="githubIcon" alt="Github Icon" width="30">
-                  </a>
+                  <div class="footer">
+
+                    <a :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
+                      <img :src="githubIcon" alt="Github Icon">
+                    </a>
+                    <p class="title">
+                      {{ project.name }}
+                    </p>
+
+                  </div>
                 </div>
               </a>
             </li>
             <li v-else-if="projectsToShow == 'all'">
               <a :href="project.link" target="_blank" rel="noreferrer nofollow noopener">
-                <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false"
-                :style="{backgroundImage: 'url(static/Images/work/' +  project.image + ')'}">
-                  <h6 class="title">
-                    {{ project.name }}
-                  </h6>
+
+                <div class="project" @mouseenter="project.showTags=true" @mouseleave="project.showTags=false">
+                  <img :src="'static/Images/work/' + project.image" alt="">
+
                   <div :class="[project.showTags ? projectHover : projectInner]"></div>
                   <div class="tags">
                     <transition name="tagsIn">
@@ -51,9 +58,16 @@
                       </ul>
                     </transition>
                   </div>
-                  <a class="footer" :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
-                    <img :src="githubIcon" alt="Github Icon" width="30">
-                  </a>
+                  <div class="footer">
+
+                    <a :href="project.github" target="_blank" rel="nofollow noreferrer noopener">
+                      <img :src="githubIcon" alt="Github Icon">
+                    </a>
+                    <p class="title">
+                      {{ project.name }}
+                    </p>
+
+                  </div>
                 </div>
               </a>
             </li>
@@ -156,6 +170,7 @@ export default {
         cursor: pointer
   .workContainer
     height: auto
+    margin-bottom: 90px
     span
       display: flex
       flex-direction: row
@@ -164,53 +179,40 @@ export default {
       ul
         transition: .5s
         li
-
           .project
-            background: rgba($bgColor, 0.8)
-            background-size: cover
-            background-repeat: no-repeat
-            background-position: top
-            width: 450px
-            // height: 340px
+            width: 400px
+            height: 234px
             border: $borderLt
-            margin: 3px
+            margin: 8px
             overflow: hidden
             position: relative
             @include bp-mobile
-              width: 320px
-              // height: 280px
+              width: 322px
+              height: 196px
+            img
+              width: 100%
             .projectInner
               position: absolute
               top: -100%
               left: 0
               width: 100%
-              height: calc(100% - 40px)
+              height: 100%
               content: ''
               transition: .3s
             .projectHover
               position: absolute
               z-index: 1
-              top: 30px
+              top: 0
               left: 0
               width: 100%
-              height: calc(100% - 30px)
+              height: 100%
               content: ''
               background: rgba(#333333, 0.7)
               transition: .3s
-            .title
-              position: relative
-              z-index: 2
-              font-size: 18px
-              font-weight: bold
-              height: 30px
-              line-height: 40px
-              text-align: center
-              background: #eee
-              color: #555
             .tags
               position: absolute
               z-index: 10
-              top: 50%
+              top: 40%
               left: 0
               width: 100%
               display: flex
@@ -233,18 +235,29 @@ export default {
             .footer
               position: absolute
               z-index: 999
-              bottom: 10px
-              left: 10px
+              bottom: 0
+              left: 0
+              width: 100%
+              height: 40px
+              background: #eee
               display: flex
               flex-direction: row
               align-items: center
-              border-radius: 50%
-              box-shadow: 2px 2px 10px #666
-              transition: .4s
-              &:hover
-                transform: scale(1.4)
-              .title
+              a
+                width: 30px
+                height: 30px
                 margin-left: 10px
+                margin-right: 10px
+                border-radius: 50%
+                box-shadow: 2px 2px 10px #666
+                transition: .4s
+                img
+                  width: 100%
+                &:hover
+                  transform: scale(1.4)
+              .title
+                color: #222
+                font-weight: bold
 
 .tagsIn-enter-active, .tagsIn-leave-active
   transition: all .5s easy-in-out

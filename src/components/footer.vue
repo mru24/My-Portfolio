@@ -1,5 +1,5 @@
 <template>
-  <footer @mouseover="showFooter" @click="hideFooter">
+  <footer @click="showFooter">
     <div class="header"><span>^</span></div>
     <div class="copyrights">
       WW Project Studio &copy;2019
@@ -14,15 +14,27 @@
 export default {
   data () {
     return {
-
+      footerActive: false
     }
   },
   methods: {
     showFooter () {
-      document.querySelector('footer').classList.add('show')
-      setTimeout(() => {
-        document.querySelector('.header').innerHTML = 'Click to hide'
-      }, 1500)
+      if (!this.footerActive) {
+        document.querySelector('footer').classList.add('show')
+        setTimeout(() => {
+          document.querySelector('.header').innerHTML = 'Click to hide'
+        }, 1500)
+        this.footerActive = true
+      } else {
+        document.querySelector('.header').innerHTML = 'Hiding'
+        document.querySelector('footer').style.pointerEvents = 'none'
+        setTimeout(() => {
+          document.querySelector('footer').classList.remove('show')
+          document.querySelector('.header').innerHTML = '<span>^</span>'
+          document.querySelector('footer').style.pointerEvents = 'all'
+        }, 1500)
+        this.footerActive = false
+      }
     },
     hideFooter () {
       document.querySelector('.header').innerHTML = 'Hiding'
