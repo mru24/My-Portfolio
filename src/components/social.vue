@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'config'
 $size: 60px
 
 ul
@@ -54,6 +55,8 @@ ul
   flex-direction: row
   justify-content: space-around
   align-items: center
+  @include bp-mobileSM
+    width: 200px
   li
     a
       .imageContainer
@@ -62,6 +65,9 @@ ul
           height: $size
           transition: .5s
           opacity: .6
+          @include bp-mobileSM
+            width: $size/1.4
+            height: $size/1.4
           &:hover
             opacity: 1
 

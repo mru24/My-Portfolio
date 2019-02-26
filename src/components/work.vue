@@ -171,14 +171,14 @@ export default {
             background-repeat: no-repeat
             background-position: top
             width: 450px
-            height: 340px
+            // height: 340px
             border: $borderLt
             margin: 3px
             overflow: hidden
             position: relative
             @include bp-mobile
               width: 320px
-              height: 280px
+              // height: 280px
             .projectInner
               position: absolute
               top: -100%
