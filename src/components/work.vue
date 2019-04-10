@@ -3,7 +3,7 @@
     <div class="container">
       <div class="workNav">
         <ul>
-          <li v-for="(nav, index) in workNav" :key="index" @click="changeCat(nav.data)">
+          <li class="navItem" v-for="(nav, index) in workNav" :key="index" @click="changeCat(nav.data)">
             {{ nav.name }}
           </li>
         </ul>
@@ -117,7 +117,7 @@ export default {
   methods: {
     sortProjects: function (el) {
       return el.slice().sort(function (a, b) {
-        return a.id - b.id
+        return b.id - a.id
       })
     },
     changeCat: function (data) {
@@ -167,7 +167,15 @@ export default {
         text-transform: capitalize
         font-size: 1.4em
         font-weight: bold
+        color: #bbb
+        padding: 10px 15px
+        margin-bottom: 12px
+        border-radius: 5px
         cursor: pointer
+        transition: .4s
+        &:hover
+          background: #222
+          color: #fff
   .workContainer
     height: auto
     margin-bottom: 90px
